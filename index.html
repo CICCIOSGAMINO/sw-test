@@ -1,0 +1,51 @@
+<!-- twitter @cicciosgamino
+
+   _______           _                                  _
+  / ____(_)_________(_)___  _________ _____ _____ ___  (_)___  ____
+ / /   / / ___/ ___/ / __ \/ ___/ __ `/ __ `/ __ `__ \/ / __ \/ __ \
+/ /___/ / /__/ /__/ / /_/ (__  ) /_/ / /_/ / / / / / / / / / / /_/ /
+\____/_/\___/\___/_/\____/____/\__, /\__,_/_/ /_/ /_/_/_/ /_/\____/
+                              /____/
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Using Service Worker - MDN Example </title>
+
+  <!-- Add the WebApp Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+</head>
+
+<body>
+
+  <h2>Using Service Worker - MDN Example </h2>
+  <p>
+    Here the examples used by the MDN page
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker_API/Using_Service_Workers">link</a>
+     To see the chrome page for Service Worker :
+    <pre>
+      chrome://inspect/#service-workers
+    </pre>
+  </p>
+
+
+  <!-- Script section  (body end for faster loading) -->
+  <script>
+    // Check the Service Worker service
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw-test.js', { scope: '/sw-test/' }).then(function(reg) {
+        // registration worked
+        console.log('Registration succeeded. Scope is ' + reg.scope);
+      }).catch(function(error) {
+        // registration failed
+        console.log('Registration failed with ' + error);
+      });
+    };
+  </script>
+</body>
+
+</html>
